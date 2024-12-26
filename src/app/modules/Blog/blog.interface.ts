@@ -6,3 +6,5 @@ export interface TBlog {
     image: string;
     readingTime: Number;
 }
+
+//companyName,title, position, startDate, endDate, description, companyInfo, companyLink
