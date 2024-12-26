@@ -9,7 +9,7 @@ const app: Application = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://l2-assign5-client.vercel.app'],
+    origin: ['http://localhost:3000', 'https://anamulportfolio.netlify.app', 'https://admin-anamulportfolio.netlify.app'],
     credentials: true,
   })
 );
