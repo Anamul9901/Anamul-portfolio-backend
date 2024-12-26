@@ -3,14 +3,12 @@ import { NextFunction, Request, Response } from 'express';
 import catchAsync from '../utils/catchAsync';
 import httpStatus from 'http-status';
 import config from '../config';
-import { TUserRole } from '../modules/facility/facility.interface';
 import sendResponse from '../utils/sendResponse';
 
-const auth = (...requiredRoles: TUserRole[]) => {
+const auth = (...requiredRoles: any) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     // get access token from headers
-    const getToken = req.headers.authorization;
-    const token = getToken!.slice(7);
+    const token = req.headers.authorization;
     if (!token) {
       sendResponse(res, {
         statusCode: httpStatus.UNAUTHORIZED,
